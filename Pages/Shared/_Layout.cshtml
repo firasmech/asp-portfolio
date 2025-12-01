@@ -44,5 +44,32 @@
 
     <!-- Optional: JavaScript -->
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe animated elements
+            const animatedElements = document.querySelectorAll(
+                '.mystory-title, .mystory-text, ' +
+                '.skills-title, .skills-quote, .skill-category, ' +
+                '.projects-title, .projects-subtitle, .project-card, .see-all-projects'
+            );
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
