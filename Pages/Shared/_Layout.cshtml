@@ -64,12 +64,14 @@
             const animatedElements = document.querySelectorAll(
                 '.mystory-title, .mystory-text, ' +
                 '.skills-title, .skills-quote, .skill-category, ' +
-                '.projects-title, .projects-subtitle, .project-card, .see-all-projects'
+                '.projects-title, .projects-subtitle, .project-card, .see-all-projects, ' +
+                '.experience-title, .experience-quote, .timeline-entry'
             );
             animatedElements.forEach(el => {
                 observer.observe(el);
             });
         });
     </script>
+
 </body>
 </html>

@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Pages\Components\Shared\" />
+    <Folder Include="wwwroot\images\projects\" />
+    <Folder Include="wwwroot\images\skills\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 

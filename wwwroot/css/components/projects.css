@@ -50,15 +50,15 @@
     animation: slideUpFade 0.8s ease 0.2s forwards;
 }
 
-/* Projects Grid */
+/* Vertical Projects Grid */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     margin-bottom: 4rem;
 }
 
-/* Project Card */
+/* Project Card - Vertical Layout */
 .project-card {
     background: var(--white);
     border-radius: 20px;
@@ -72,8 +72,13 @@
     animation: slideUpFade 0.8s ease forwards;
 }
 
+    /* Alternate background for even cards */
+    .project-card:nth-child(even) {
+        background: linear-gradient(135deg, #fafcff, #f5f9ff);
+    }
+
     .project-card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
         box-shadow: var(--shadow-lg);
     }
 
@@ -89,11 +94,18 @@
         animation-delay: 0.5s;
     }
 
-/* Project Image */
+/* Project Layout - Image on left, content on right */
+.project-card-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 320px;
+}
+
+/* Project Image - Left Side */
 .project-image-container {
     position: relative;
     overflow: hidden;
-    height: 220px;
+    height: 100%;
 }
 
 .project-image {
@@ -104,7 +116,7 @@
 }
 
 .project-card:hover .project-image {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .project-overlay {
@@ -113,12 +125,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    background: linear-gradient(to right, rgba(0,0,0,0.7), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 2rem;
 }
 
 .project-card:hover .project-overlay {
@@ -135,8 +148,9 @@
     font-size: 0.9rem;
     cursor: pointer;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .project-card:hover .view-project-btn {
@@ -144,27 +158,36 @@
     transform: translateY(0);
 }
 
-/* Project Content */
+.view-project-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Project Content - Right Side */
 .project-content {
-    padding: 2rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-header {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
 }
 
 .project-description {
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     color: var(--text-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Tech Tags */
@@ -191,9 +214,9 @@
 .tech-tag {
     background: var(--background-light);
     color: var(--primary-color);
-    padding: 0.35rem 0.75rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
@@ -208,23 +231,21 @@
 /* Project Actions */
 .project-actions {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
+    gap: 1rem;
+    margin-top: auto;
 }
 
-/* Update GitHub Button Styles */
+/* GitHub Button */
 .github-button {
     display: flex;
     align-items: center;
     background: var(--text-dark);
     color: var(--white);
-    padding: 0.6rem 1.25rem; /* Reduced padding */
-    border-radius: 20px; /* Slightly smaller radius */
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.85rem; /* Smaller font */
+    font-size: 0.9rem;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
@@ -237,23 +258,23 @@
     }
 
 .github-icon {
-    width: 16px; /* Reduced from 20px */
-    height: 16px; /* Reduced from 20px */
-    margin-right: 0.4rem; /* Reduced margin */
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
     fill: currentColor;
 }
 
-/* Update Show More Button */
+/* Show More Button */
 .show-more-button {
     display: inline-flex;
     align-items: center;
     background: transparent;
     color: var(--primary-color);
-    padding: 0.6rem 1.25rem; /* Match GitHub button padding */
-    border-radius: 20px; /* Match GitHub button radius */
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.85rem; /* Match GitHub button font size */
+    font-size: 0.9rem;
     transition: all 0.3s ease;
     border: 1px solid var(--primary-color);
     cursor: pointer;
@@ -266,8 +287,8 @@
     }
 
 .arrow-icon {
-    margin-left: 0.4rem; /* Reduced margin */
-    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
     transition: transform 0.3s ease;
 }
 
@@ -275,34 +296,139 @@
     transform: translateX(4px);
 }
 
-/* Update Project Actions for better spacing */
-.project-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.25rem; /* Slightly reduced */
-    border-top: 1px solid var(--border-color);
-    gap: 0.75rem; /* Add gap for better spacing */
+/* See All Projects Button */
+.see-all-projects {
+    text-align: center;
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFade 0.8s ease 0.6s forwards;
 }
 
-/* Make buttons take equal space on mobile */
-@media (max-width: 480px) {
+.see-all-btn {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+    .see-all-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+        color: var(--white);
+    }
+
+.see-all-icon {
+    margin-left: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.see-all-btn:hover .see-all-icon {
+    transform: translateX(4px);
+}
+
+/* Animation Keyframes */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - Stack on mobile */
+@media (max-width: 968px) {
+    .project-card-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .project-image-container {
+        height: 250px;
+    }
+
+    .project-overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+        align-items: flex-end;
+        padding: 1.5rem;
+    }
+
+    .project-content {
+        padding: 2rem;
+    }
+
+    .project-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 0 1.5rem;
+    }
+
+    .projects-title {
+        font-size: 2.5rem;
+    }
+
+    .projects-grid {
+        gap: 2rem;
+    }
+
     .project-actions {
         flex-direction: column;
-        gap: 0.75rem;
     }
 
     .github-button, .show-more-button {
         width: 100%;
         justify-content: center;
-        padding: 0.7rem 1.5rem; /* Slightly larger for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #projects {
+        padding: 3rem 0;
     }
 
-    .github-button {
-        order: 2; /* GitHub button below Show More on mobile */
+    .projects-title {
+        font-size: 2.25rem;
     }
 
-    .show-more-button {
-        order: 1;
+    .projects-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .project-image-container {
+        height: 200px;
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.4rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .see-all-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
     }
 }
