@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Firas Mecheri</title>
+
+    <!-- Use Tag Helpers for paths and cache busting -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a asp-page="/Index" class="logo">FIRAS<span>DEV</span></a>
+            </div>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a asp-page="/About">Story</a></li>
+                    <li><a asp-page="/Education">Education</a></li>
+                    <li><a asp-page="/Workflow">Workflow</a></li>
+                    <li><a asp-page="/Projects">Portfolio</a></li>
+                    <li><a asp-page="/Contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Firas Mecheri | Portfolio</p>
+        <div class="footer-links">
+            <a href="https://github.com/firasmech" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/firas-mecheri-33893a282/" target="_blank">LinkedIn</a> |
+            <a href="mailto:firas.mech.1221@gmail.com">Email</a>
+        </div>
+    </footer>
+
+    <!-- Background animation -->
+    <canvas id="background-canvas"></canvas>
+
+    <!-- Optional: JavaScript -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

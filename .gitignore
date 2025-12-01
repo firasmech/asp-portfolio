@@ -1,0 +1,24 @@
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio temporary files
+.vs/
+
+# Rider files
+.idea/
+
+# Node modules (if using npm)
+node_modules/
+
+# Logs
+*.log
+
+# Publish output
+publish/
