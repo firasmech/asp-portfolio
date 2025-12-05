@@ -11,15 +11,17 @@
     <header class="main-header">
         <nav class="navbar">
             <div class="nav-left">
-                <a asp-page="/Index" class="logo">FIRAS<span>DEV</span></a>
+                <a asp-page="/Home" class="logo">FIRAS<span>DEV</span></a>
             </div>
 
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a asp-page="/About">Story</a></li>
+                    <!-- Home will show all sections -->
+                    <li><a asp-page="/Home">Home</a></li>
+                    <!-- Separate pages for other sections -->
                     <li><a asp-page="/Education">Education</a></li>
                     <li><a asp-page="/Workflow">Workflow</a></li>
-                    <li><a asp-page="/Projects">Portfolio</a></li>
+                    <li><a asp-page="/Projects">Projects</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
                 </ul>
             </div>
