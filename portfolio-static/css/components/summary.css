@@ -1,0 +1,249 @@
+﻿/* ===== PROFESSIONAL SUMMARY SECTION ===== */
+#summary {
+    background: var(--white);
+    padding: 3rem 0;
+    position: relative;
+}
+
+.summary-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Left Column - Profile Picture */
+.profile-image-container {
+    position: relative;
+    text-align: center;
+    height: 100%;
+}
+
+.profile-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    border: 6px solid var(--white);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-image-container:hover .profile-image {
+    transform: scale(1.05);
+}
+
+/* Right Column - Content */
+.summary-content {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Professional Tag */
+.professional-tag {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid var(--primary-color);
+}
+
+.summary-greeting {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.summary-name {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.summary-title {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.summary-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+    .summary-description p {
+        margin-bottom: 0.5rem;
+    }
+
+/* Two Column Layout for Details */
+.summary-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: start; /* Align both columns at the top */
+}
+
+/* Left Column - Languages */
+.languages-section {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    padding: 1.25rem; /* Slightly increased padding */
+    border-radius: 12px;
+    border-left: 4px solid var(--secondary-color);
+    position: relative;
+    height: fit-content;
+}
+
+    .languages-section::before {
+        content: '🌍';
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        transform: translateY(-50%);
+        background: var(--white);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        border: 2px solid var(--secondary-color);
+    }
+
+.languages-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem; /* Increased margin */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.languages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem; /* Slightly increased gap */
+}
+
+.language-tag {
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 0.4rem 0.9rem; /* Slightly increased padding */
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+    .language-tag:hover {
+        background: var(--primary-color);
+        color: var(--white);
+        transform: translateY(-1px);
+    }
+
+/* Right Column - Highlights */
+.summary-highlights {
+    margin-bottom: 0;
+    padding: 0.25rem 0; /* Add some vertical padding to align with languages */
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.8rem; /* Slightly increased margin */
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.5; /* Increased line height for better readability */
+    padding: 0.1rem 0; /* Small padding to help alignment */
+}
+
+.highlight-icon {
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem; /* Slightly increased margin */
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+    .highlight-icon svg {
+        width: 8px;
+        height: 8px;
+        fill: var(--white);
+    }
+
+.highlight-text {
+    flex: 1;
+    padding-top: 0.05rem; /* Fine-tune text alignment */
+}
+
+/* Contact Button */
+.contact-button-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+    .contact-button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        color: var(--white);
+    }
+
+.button-icon {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-button:hover .button-icon {
+    transform: translateX(4px);
+}

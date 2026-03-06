@@ -1,0 +1,19 @@
+﻿/* ===== MAIN CSS FILE - IMPORTS ALL COMPONENTS ===== */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Import CSS Modules */
+@import 'globals.css';
+@import 'layout.css';
+@import 'components/navbar.css';
+@import 'components/summary.css';
+@import 'components/sections.css';
+@import 'components/footer.css';
+@import 'utilities/responsive.css';
+@import 'components/mystory.css';
+@import 'components/skills.css';
+@import 'components/projects.css';
+@import 'components/experience.css';
+@import 'components/education.css';
+@import 'pages.css';

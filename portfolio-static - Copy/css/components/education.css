@@ -1,0 +1,338 @@
+﻿/* ===== EDUCATION SECTION ===== */
+#education-page {
+    background: var(--background-light);
+    padding: 5rem 0;
+    position: relative;
+}
+
+.education-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.education-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.education-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+    .education-title::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+    }
+
+.education-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Education Timeline */
+.education-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+    /* Vertical Timeline Line */
+    .education-timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 30px;
+        height: 100%;
+        width: 2px;
+        background: var(--text-dark);
+        z-index: 1;
+    }
+
+/* Timeline Entry */
+.education-entry {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-left: 70px;
+}
+
+/* Timeline Marker (Yellow Circle) */
+.timeline-marker {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffd700; /* Yellow color */
+    border: 4px solid var(--text-dark);
+    z-index: 2;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+/* Date Badge */
+.education-date {
+    display: inline-block;
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    left: -10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Education Content Card */
+.education-content {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+    .education-content:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+    }
+
+/* Degree Header */
+.degree-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.degree-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.institution {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.location {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+
+/* GPA Section */
+.gpa-section {
+    background: linear-gradient(135deg, #f0f9ff, #e6f4ff);
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3b82f6;
+}
+
+.gpa-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gpa-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Coursework Section */
+.coursework-section {
+    margin-top: 2rem;
+}
+
+.coursework-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+    .coursework-label::before {
+        content: '📚';
+        font-size: 1.2rem;
+    }
+
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.course-item {
+    background: var(--background-light);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+    .course-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        transition: width 0.3s ease;
+    }
+
+    .course-item:hover {
+        background: var(--white);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .course-item:hover::before {
+            width: 6px;
+        }
+
+/* Highlight for Advanced Diploma */
+.education-entry:nth-child(2) .timeline-marker {
+    background: #7c3aed; /* Purple for advanced diploma */
+}
+
+.education-entry:nth-child(2) .education-date {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+}
+
+.education-entry:nth-child(2) .gpa-section {
+    border-left-color: #7c3aed;
+}
+
+.education-entry:nth-child(2) .gpa-value {
+    color: #7c3aed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .education-container {
+        padding: 0 1.5rem;
+    }
+
+    .education-title {
+        font-size: 2.5rem;
+    }
+
+    .education-timeline::before {
+        left: 20px;
+    }
+
+    .education-entry {
+        padding-left: 50px;
+    }
+
+    .timeline-marker {
+        left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .education-date {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+        left: -5px;
+    }
+
+    .education-content {
+        padding: 1.75rem;
+    }
+
+    .degree-title {
+        font-size: 1.5rem;
+    }
+
+    .coursework-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 0.6rem;
+    }
+
+    .course-item {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #education-page {
+        padding: 3rem 0;
+    }
+
+    .education-title {
+        font-size: 2.25rem;
+    }
+
+    .education-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .education-entry {
+        padding-left: 40px;
+    }
+
+    .timeline-marker {
+        left: 5px;
+        width: 18px;
+        height: 18px;
+        border-width: 3px;
+    }
+
+    .coursework-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gpa-section {
+        padding: 1rem;
+    }
+
+    .gpa-value {
+        font-size: 1.3rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
